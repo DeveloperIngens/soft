@@ -39,7 +39,7 @@ class ControladorTecnologia{
                         $filename = $numeroAleatorio . "-" . $_FILES["nuevoPdfEntregaEquipo"]["name"]["$key"];
                         $source = $_FILES["nuevoPdfEntregaEquipo"]["tmp_name"][$key];
 
-						$directorio = 'Archivos/Inventario/EntregasEquipos/';
+						$directorio = '../archivos_soft/Archivos/Inventario/EntregasEquipos/';
 
 						if(!file_exists($directorio)){
 

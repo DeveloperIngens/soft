@@ -258,7 +258,7 @@ class ControladorCorrespondencia {
                         $filename = $numeroAleatorio . "-" . $_FILES["nuevoDocumentoProyectoCorRecRad"]["name"]["$key"];
                         $source = $_FILES["nuevoDocumentoProyectoCorRecRad"]["tmp_name"][$key];
 
-                        $directorio = 'Archivos/Correspondencia/CorrespondenciaRecibida/';
+                        $directorio = '../archivos_soft/Archivos/Correspondencia/CorrespondenciaRecibida/';
 
                         if(!file_exists($directorio)){
 
@@ -312,11 +312,7 @@ class ControladorCorrespondencia {
 
                                 }).then(function(result){
 
-                                    if(result.value){
-                                    
-                                        window.location = 'cargar-correspondencia-recibida-cor';
-
-                                    }
+                                    window.location = 'cargar-correspondencia-recibida-cor';
 
                                 });
                         
@@ -338,11 +334,7 @@ class ControladorCorrespondencia {
 
                             }).then(function(result){
 
-                                if(result.value){
-                                
-                                    window.location = 'cargar-correspondencia-recibida-cor';
-
-                                }
+                                window.location = 'cargar-correspondencia-recibida-cor';
 
                             });
 
@@ -366,11 +358,7 @@ class ControladorCorrespondencia {
 
                     }).then(function(result){
 
-                        if(result.value){
-                        
-                            window.location = 'cargar-correspondencia-recibida-cor';
-
-                        }
+                        window.location = 'cargar-correspondencia-recibida-cor';
 
                     });
 
@@ -391,11 +379,7 @@ class ControladorCorrespondencia {
 
                 }).then(function(result){
 
-                    if(result.value){
-                    
-                        window.location = 'cargar-correspondencia-recibida-cor';
-
-                    }
+                    window.location = 'cargar-correspondencia-recibida-cor';
 
                 });
 
@@ -439,11 +423,7 @@ class ControladorCorrespondencia {
 
                         }).then(function(result){
 
-                            if(result.value){
-                            
-                                window.location = 'correspondencia-recibida-cor';
-
-                            }
+                            window.location = 'correspondencia-recibida-cor';
 
                         });
                 
@@ -466,11 +446,7 @@ class ControladorCorrespondencia {
 
                     }).then(function(result){
 
-                        if(result.value){
-                        
-                            window.location = 'correspondencia-recibida-cor';
-
-                        }
+                        window.location = 'correspondencia-recibida-cor';
 
                     });
 
@@ -491,11 +467,7 @@ class ControladorCorrespondencia {
 
                 }).then(function(result){
 
-                    if(result.value){
-                    
-                        window.location = 'correspondencia-recibida-cor';
-
-                    }
+                    window.location = 'correspondencia-recibida-cor';
 
                 });
 
@@ -541,11 +513,7 @@ class ControladorCorrespondencia {
 
                         }).then(function(result){
 
-                            if(result.value){
-                            
-                                window.location = 'correspondencia-recibida-cor';
-
-                            }
+                            window.location = 'correspondencia-recibida-cor';
 
                         });
                 
@@ -568,11 +536,7 @@ class ControladorCorrespondencia {
 
                     }).then(function(result){
 
-                        if(result.value){
-                        
-                            window.location = 'correspondencia-recibida-cor';
-
-                        }
+                        window.location = 'correspondencia-recibida-cor';
 
                     });
 
@@ -593,11 +557,7 @@ class ControladorCorrespondencia {
 
                 }).then(function(result){
 
-                    if(result.value){
-                    
-                        window.location = 'correspondencia-recibida-cor';
-
-                    }
+                    window.location = 'correspondencia-recibida-cor';
 
                 });
 
@@ -658,11 +618,7 @@ class ControladorCorrespondencia {
 
                         }).then(function(result){
 
-                            if(result.value){
-                            
-                                window.location = 'cargar-correspondencia-recibida-cor';
-
-                            }
+                            window.location = 'cargar-correspondencia-recibida-cor';
 
                         });
                 
@@ -685,11 +641,7 @@ class ControladorCorrespondencia {
 
                     }).then(function(result){
 
-                        if(result.value){
-                        
-                            window.location = 'correspondencia-enviada-cor';
-
-                        }
+                        window.location = 'correspondencia-enviada-cor';
 
                     });
 
@@ -712,11 +664,7 @@ class ControladorCorrespondencia {
 
                 }).then(function(result){
 
-                    if(result.value){
-                    
-                        window.location = 'cargar-correspondencia-recibida-cor';
-
-                    }
+                    window.location = 'cargar-correspondencia-recibida-cor';
 
                 });
 
@@ -745,7 +693,7 @@ class ControladorCorrespondencia {
                         $filename = $numeroAleatorio . "-" . $_FILES["nuevoDocumentoProyectoDocCorRec"]["name"]["$key"];
                         $source = $_FILES["nuevoDocumentoProyectoDocCorRec"]["tmp_name"][$key];
 
-                        $directorio = 'Archivos/Correspondencia/CorrespondenciaRecibida/';
+                        $directorio = '../archivos_soft/Archivos/Correspondencia/CorrespondenciaRecibida/';
 
                         if(!file_exists($directorio)){
 
@@ -798,11 +746,7 @@ class ControladorCorrespondencia {
 
                                 }).then(function(result){
 
-                                    if(result.value){
-                                    
-                                        window.location = 'cargar-correspondencia-recibida-cor';
-
-                                    }
+                                    window.location = 'cargar-correspondencia-recibida-cor';
 
                                 });
                         
@@ -824,11 +768,7 @@ class ControladorCorrespondencia {
 
                             }).then(function(result){
 
-                                if(result.value){
-                                
-                                    window.location = 'correspondencia-enviada-cor';
-
-                                }
+                                window.location = 'correspondencia-enviada-cor';
 
                             });
 
@@ -853,11 +793,7 @@ class ControladorCorrespondencia {
 
                     }).then(function(result){
 
-                        if(result.value){
-                        
-                            window.location = 'correspondencia-enviada-cor';
-
-                        }
+                        window.location = 'correspondencia-enviada-cor';
 
                     });
 
@@ -879,11 +815,7 @@ class ControladorCorrespondencia {
 
                 }).then(function(result){
 
-                    if(result.value){
-                    
-                        window.location = 'cargar-correspondencia-recibida-cor';
-
-                    }
+                    window.location = 'cargar-correspondencia-recibida-cor';
 
                 });
 
@@ -912,7 +844,7 @@ class ControladorCorrespondencia {
                         $filename = $numeroAleatorio . "-" . $_FILES["nuevoDocumentoProyectoCorRec"]["name"]["$key"];
                         $source = $_FILES["nuevoDocumentoProyectoCorRec"]["tmp_name"][$key];
 
-                        $directorio = 'Archivos/Correspondencia/CorrespondenciaRecibida/';
+                        $directorio = '../archivos_soft/Archivos/Correspondencia/CorrespondenciaRecibida/';
 
                         if(!file_exists($directorio)){
 
@@ -965,11 +897,7 @@ class ControladorCorrespondencia {
 
                                 }).then(function(result){
 
-                                    if(result.value){
-                                    
-                                        window.location = 'cargar-correspondencia-recibida-cor';
-
-                                    }
+                                    window.location = 'cargar-correspondencia-recibida-cor';
 
                                 });
                         
@@ -991,11 +919,7 @@ class ControladorCorrespondencia {
 
                             }).then(function(result){
 
-                                if(result.value){
-                                
-                                    window.location = 'correspondencia-enviada-cor';
-
-                                }
+                                window.location = 'correspondencia-enviada-cor';
 
                             });
 
@@ -1020,11 +944,7 @@ class ControladorCorrespondencia {
 
                     }).then(function(result){
 
-                        if(result.value){
-                        
-                            window.location = 'correspondencia-enviada-cor';
-
-                        }
+                        window.location = 'correspondencia-enviada-cor';
 
                     });
 
@@ -1046,11 +966,7 @@ class ControladorCorrespondencia {
 
                 }).then(function(result){
 
-                    if(result.value){
-                    
-                        window.location = 'cargar-correspondencia-recibida-cor';
-
-                    }
+                    window.location = 'cargar-correspondencia-recibida-cor';
 
                 });
 
@@ -1098,11 +1014,7 @@ class ControladorCorrespondencia {
 
                         }).then(function(result){
 
-                            if(result.value){
-                            
-                                window.location = 'correspondencia-enviada-cor';
-
-                            }
+                            window.location = 'correspondencia-enviada-cor';
 
                         });
                 
@@ -1125,11 +1037,7 @@ class ControladorCorrespondencia {
 
                     }).then(function(result){
 
-                        if(result.value){
-                        
-                            window.location = 'correspondencia-enviada-cor';
-
-                        }
+                        window.location = 'correspondencia-enviada-cor';
 
                     });
 
@@ -1151,11 +1059,7 @@ class ControladorCorrespondencia {
 
                 }).then(function(result){
 
-                    if(result.value){
-                    
-                        window.location = 'correspondencia-enviada-cor';
-
-                    }
+                    window.location = 'correspondencia-enviada-cor';
 
                 });
 
@@ -1184,7 +1088,7 @@ class ControladorCorrespondencia {
                         $filename = $_POST["idEnvioCorrespondenciaRespuesta"] ."-". $_FILES["nuevoDocumentoCorrespondenciaRespuesta"]["name"]["$key"];
                         $source = $_FILES["nuevoDocumentoCorrespondenciaRespuesta"]["tmp_name"][$key];
 
-                        $directorio = 'Archivos/Correspondencia/CorrespondenciaEnviada/ArchivosRecibidos/';
+                        $directorio = '../archivos_soft/Archivos/Correspondencia/CorrespondenciaEnviada/ArchivosRecibidos/';
 
                         if(!file_exists($directorio)){
 
@@ -1237,11 +1141,7 @@ class ControladorCorrespondencia {
 
                                 }).then(function(result){
 
-                                    if(result.value){
-                                    
-                                        window.location = 'correspondencia-enviada-cor';
-
-                                    }
+                                    window.location = 'correspondencia-enviada-cor';
 
                                 });
                         
@@ -1263,11 +1163,7 @@ class ControladorCorrespondencia {
 
                             }).then(function(result){
 
-                                if(result.value){
-                                
-                                    window.location = 'correspondencia-enviada-cor';
-
-                                }
+                                window.location = 'correspondencia-enviada-cor';
 
                             });
 
@@ -1291,11 +1187,7 @@ class ControladorCorrespondencia {
 
                     }).then(function(result){
 
-                        if(result.value){
-                        
-                            window.location = 'correspondencia-enviada-cor';
-
-                        }
+                        window.location = 'correspondencia-enviada-cor';
 
                     });
 
@@ -1317,11 +1209,7 @@ class ControladorCorrespondencia {
 
                 }).then(function(result){
 
-                    if(result.value){
-                    
-                        window.location = 'correspondencia-enviada-cor';
-
-                    }
+                    window.location = 'correspondencia-enviada-cor';
 
                 });
 
@@ -1348,7 +1236,7 @@ class ControladorCorrespondencia {
                         $filename = $_POST["idEnvioCorrespondencia"] ."-". $_FILES["nuevoDocumentoCorrespondencia"]["name"]["$key"];
                         $source = $_FILES["nuevoDocumentoCorrespondencia"]["tmp_name"][$key];
 
-                        $directorio = 'Archivos/Correspondencia/CorrespondenciaEnviada/ArchivosEnviados/';
+                        $directorio = '../archivos_soft/Archivos/Correspondencia/CorrespondenciaEnviada/ArchivosEnviados/';
 
                         if(!file_exists($directorio)){
 
@@ -1401,11 +1289,7 @@ class ControladorCorrespondencia {
 
                                 }).then(function(result){
 
-                                    if(result.value){
-                                    
-                                        window.location = 'correspondencia-enviada-cor';
-
-                                    }
+                                    window.location = 'correspondencia-enviada-cor';
 
                                 });
                         
@@ -1427,11 +1311,7 @@ class ControladorCorrespondencia {
 
                             }).then(function(result){
 
-                                if(result.value){
-                                
-                                    window.location = 'correspondencia-enviada-cor';
-
-                                }
+                                window.location = 'correspondencia-enviada-cor';
 
                             });
 
@@ -1456,11 +1336,7 @@ class ControladorCorrespondencia {
 
                     }).then(function(result){
 
-                        if(result.value){
-                        
-                            window.location = 'correspondencia-enviada-cor';
-
-                        }
+                        window.location = 'correspondencia-enviada-cor';
 
                     });
 
@@ -1482,11 +1358,7 @@ class ControladorCorrespondencia {
 
                 }).then(function(result){
 
-                    if(result.value){
-                    
-                        window.location = 'correspondencia-enviada-cor';
-
-                    }
+                    window.location = 'correspondencia-enviada-cor';
 
                 });
 
@@ -1547,11 +1419,7 @@ class ControladorCorrespondencia {
 
                         }).then(function(result){
 
-                            if(result.value){
-                            
-                                window.location = 'correspondencia-enviada-cor';
-
-                            }
+                            window.location = 'correspondencia-enviada-cor';
 
                         });
                 
@@ -1574,11 +1442,7 @@ class ControladorCorrespondencia {
 
                     }).then(function(result){
 
-                        if(result.value){
-                        
-                            window.location = 'correspondencia-enviada-cor';
-
-                        }
+                        window.location = 'correspondencia-enviada-cor';
 
                     });
 
@@ -1600,11 +1464,7 @@ class ControladorCorrespondencia {
 
                 }).then(function(result){
 
-                    if(result.value){
-                    
-                        window.location = 'correspondencia-enviada-cor';
-
-                    }
+                    window.location = 'correspondencia-enviada-cor';
 
                 });
 
