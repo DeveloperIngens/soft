@@ -150,7 +150,7 @@ class ControladorHojaVida {
                                     $filenameHv = $_FILES["nuevoArchivoDocumentoHojaVida"]["name"]["$key"];
                                     $sourceHv = $_FILES["nuevoArchivoDocumentoHojaVida"]["tmp_name"][$key];
 
-                                    $directorio = 'Archivos/AdjuntosDoc/';
+                                    $directorio = '../archivos_soft/Archivos/AdjuntosDoc/';
 
                                     if(!file_exists($directorio)){
 
@@ -158,7 +158,7 @@ class ControladorHojaVida {
 
                                     }
 
-                                    $directorioHv = 'Archivos/AdjuntosHV/';
+                                    $directorioHv = '../archivos_soft/Archivos/AdjuntosHV/';
 
                                     if(!file_exists($directorioHv)){
 
@@ -412,7 +412,7 @@ class ControladorHojaVida {
                                     $filename = $_FILES["editarArchivoDocumentoIdentidad"]["name"]["$key"];
                                     $source = $_FILES["editarArchivoDocumentoIdentidad"]["tmp_name"][$key];
         
-                                    $directorio = 'Archivos/AdjuntosDoc/';
+                                    $directorio = '../archivos_soft/Archivos/AdjuntosDoc/';
         
                                     if(!file_exists($directorio)){
         
@@ -496,7 +496,7 @@ class ControladorHojaVida {
                                 $filenameHv = $_FILES["editarArchivoDocumentoHojaVida"]["name"]["$key"];
                                 $sourceHv = $_FILES["editarArchivoDocumentoHojaVida"]["tmp_name"][$key];
     
-                                $directorioHv = 'Archivos/AdjuntosHV/';
+                                $directorioHv = '../archivos_soft/Archivos/AdjuntosHV/';
     
                                 if(!file_exists($directorioHv)){
     
@@ -739,9 +739,9 @@ class ControladorHojaVida {
                                     $filenameHv = $_FILES["nuevoArchivoDocumentoHojaVida"]["name"]["$key"];
                                     $sourceHv = $_FILES["nuevoArchivoDocumentoHojaVida"]["tmp_name"][$key];
 
-                                    $directorio = 'Archivos/AdjuntosDoc/';
+                                    $directorio = '../archivos_soft/Archivos/AdjuntosDoc/';
 
-                                    $directorioHv = 'Archivos/AdjuntosHV/';
+                                    $directorioHv = '../archivos_soft/Archivos/AdjuntosHV/';
 
 
                                     if(!file_exists($directorio)){
@@ -993,7 +993,7 @@ class ControladorHojaVida {
                                 $filename = $_FILES["nuevoDocumentoCertificacion"]["name"]["$key"];
                                 $source = $_FILES["nuevoDocumentoCertificacion"]["tmp_name"][$key];
 
-                                $directorio = 'Archivos/AdjuntosCerti/';
+                                $directorio = '../archivos_soft/Archivos/AdjuntosCerti/';
 
                                 if(!file_exists($directorio)){
 
@@ -1221,7 +1221,7 @@ class ControladorHojaVida {
                                     $filename = $_POST["nombreArchivoAntiguo"];
                                     $source = $_FILES["editarDocumentoCertificacion"]["tmp_name"][$key];
 
-                                    $directorio = 'Archivos/AdjuntosCerti/';
+                                    $directorio = '../archivos_soft/Archivos/AdjuntosCerti/';
 
                                     if(!file_exists($directorio)){
 
@@ -1571,7 +1571,7 @@ class ControladorHojaVida {
                             $filename = $_FILES["nuevoArchivoNivelEstudioBachi"]["name"]["$key"];
                             $source = $_FILES["nuevoArchivoNivelEstudioBachi"]["tmp_name"][$key];
 
-                            $directorio = 'Archivos/AdjuntosDipActas/';
+                            $directorio = '../archivos_soft/Archivos/AdjuntosDipActas/';
 
                             if(!file_exists($directorio)){
 
@@ -1695,7 +1695,7 @@ class ControladorHojaVida {
                             $filename = $_FILES["nuevoArchivoNivelEstudioTecLaboral"]["name"]["$key"];
                             $source = $_FILES["nuevoArchivoNivelEstudioTecLaboral"]["tmp_name"][$key];
 
-                            $directorio = 'Archivos/AdjuntosDipActas/';
+                            $directorio = '../archivos_soft/Archivos/AdjuntosDipActas/';
 
                             if(!file_exists($directorio)){
 
@@ -1856,7 +1856,7 @@ class ControladorHojaVida {
                             $filename = $_FILES["nuevoArchivoNivelEstudioTecPro"]["name"]["$key"];
                             $source = $_FILES["nuevoArchivoNivelEstudioTecPro"]["tmp_name"][$key];
 
-                            $directorio = 'Archivos/AdjuntosDipActas/';
+                            $directorio = '../archivos_soft/Archivos/AdjuntosDipActas/';
 
                             if(!file_exists($directorio)){
 
@@ -2016,7 +2016,7 @@ class ControladorHojaVida {
                             $filename = $_FILES["nuevoArchivoNivelEstudioTecnologica"]["name"]["$key"];
                             $source = $_FILES["nuevoArchivoNivelEstudioTecnologica"]["tmp_name"][$key];
 
-                            $directorio = 'Archivos/AdjuntosDipActas/';
+                            $directorio = '../archivos_soft/Archivos/AdjuntosDipActas/';
 
                             if(!file_exists($directorio)){
 
@@ -2177,7 +2177,7 @@ class ControladorHojaVida {
                             $filename = $_FILES["nuevoArchivoNivelEstudioUni"]["name"]["$key"];
                             $source = $_FILES["nuevoArchivoNivelEstudioUni"]["tmp_name"][$key];
 
-                            $directorio = 'Archivos/AdjuntosDipActas/';
+                            $directorio = '../archivos_soft/Archivos/AdjuntosDipActas/';
 
                             if(!file_exists($directorio)){
 
@@ -2226,7 +2226,7 @@ class ControladorHojaVida {
                                         $filenameTarjeta = $_FILES["nuevoArchivoTarjetaProfesionalUni"]["name"]["$key"];
                                         $sourceTarjeta = $_FILES["nuevoArchivoTarjetaProfesionalUni"]["tmp_name"][$key];
             
-                                        $directorioTarjeta = 'Archivos/AdjuntosDipActas/';
+                                        $directorioTarjeta = '../archivos_soft/Archivos/AdjuntosDipActas/';
             
                                         if(!file_exists($directorio)){
             
@@ -2423,7 +2423,7 @@ class ControladorHojaVida {
                             $filename = $_FILES["nuevoArchivoNivelEstudioEsp"]["name"]["$key"];
                             $source = $_FILES["nuevoArchivoNivelEstudioEsp"]["tmp_name"][$key];
 
-                            $directorio = 'Archivos/AdjuntosDipActas/';
+                            $directorio = '../archivos_soft/Archivos/AdjuntosDipActas/';
 
                             if(!file_exists($directorio)){
 
@@ -2587,7 +2587,7 @@ class ControladorHojaVida {
                             $filename = $_FILES["nuevoArchivoNivelEstudioMae"]["name"]["$key"];
                             $source = $_FILES["nuevoArchivoNivelEstudioMae"]["tmp_name"][$key];
 
-                            $directorio = 'Archivos/AdjuntosDipActas/';
+                            $directorio = '../archivos_soft/Archivos/AdjuntosDipActas/';
 
                             if(!file_exists($directorio)){
 
@@ -2749,7 +2749,7 @@ class ControladorHojaVida {
                             $filename = $_FILES["nuevoArchivoNivelEstudioDoc"]["name"]["$key"];
                             $source = $_FILES["nuevoArchivoNivelEstudioDoc"]["tmp_name"][$key];
 
-                            $directorio = 'Archivos/AdjuntosDipActas/';
+                            $directorio = '../archivos_soft/Archivos/AdjuntosDipActas/';
 
                             if(!file_exists($directorio)){
 
@@ -2911,7 +2911,7 @@ class ControladorHojaVida {
                             $filename = $_FILES["nuevoArchivoNivelEstudioEstNoFor"]["name"]["$key"];
                             $source = $_FILES["nuevoArchivoNivelEstudioEstNoFor"]["tmp_name"][$key];
 
-                            $directorio = 'Archivos/AdjuntosDipActas/';
+                            $directorio = '../archivos_soft/Archivos/AdjuntosDipActas/';
 
                             if(!file_exists($directorio)){
 
