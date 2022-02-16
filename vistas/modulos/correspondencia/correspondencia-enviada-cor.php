@@ -35,6 +35,8 @@
 
           <button class="btn btn-success" data-toggle="modal" data-target="#modalAgregarConcecutivo"><i class="fa fa-plus"></i> Nuevo Consecutivo</button>
 
+          <button class="btn btn-info" data-toggle="modal" data-target="#modalAgregarConcecutivoMasivo"><i class="fa fa-plus"></i> Nuevo Consecutivo Masivo</button>
+
         </div>
         
         <div class="box-body">
@@ -385,6 +387,106 @@ MODAL VER INFORMACION CORRESPONDENCIA
 
 </div>
 
+
+<!--=====================================
+MODAL GENERAR CODIGO CONCECUTIVO MASIVO
+======================================-->
+
+<div id="modalAgregarConcecutivoMasivo" class="modal fade" role="dialog" style="overflow-y: scroll">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post" enctype="multipart/form-data">
+
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
+
+        <div class="modal-header" style="background:#3c8dbc; color:white">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Generar Concecutivo Masivo</h4>
+
+        </div>
+
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- ENTRADA PARA SELECCION PROYECTO -->
+            <div class="form-group">
+            
+                <label>Proyecto:</label>
+
+                <select name="nuevoProyectoConcecutivoMasivo" id="nuevoProyectoConcecutivoMasivo" class="form-control" required>
+
+                    <option value="">-- Seleccione una opcion --</option>
+
+                    <?php 
+                    
+                    $tabla = "proyectos_cor";
+                    $item = null;
+                    $valor = null;
+
+                    $proyectos = ControladorParametricasCor::ctrObtenerDatoRequerido($tabla, $item, $valor);
+                    
+                    foreach($proyectos as $key => $valueProyectos): ?>
+
+                        <option value="<?php echo $valueProyectos["id_proyecto"]; ?>"><?php echo $valueProyectos["nombre_proyecto"]; ?></option>
+
+                    <?php endforeach ?>
+
+                </select>
+
+            </div>
+            
+            <div id="contenedorCodigoMasivo"></div>
+
+            <div class="form-group">
+                <label>Cantidad Concecutivos:</label>
+                <input type="number" class="form-control" name="cantidadConcecutivosGenerar" max="999" required>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal"><i class="fas fa-sign-out-alt"></i> Salir</button>
+
+          <button type="submit" name="crearConcecutivoMasivo" class="btn btn-success"><i class="fas fa-save"></i> Guardar Consecutivo</button>
+
+        </div>
+
+        <?php
+
+          if(isset($_POST["crearConcecutivoMasivo"])){
+
+            $crearCod = new ControladorCorrespondencia();
+            $crearCod->ctrCrearCodigoConcecutivoMasivo();
+          
+          }
+        ?>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
 
 <!--=====================================
 MODAL GENERAR CODIGO CONCECUTIVO

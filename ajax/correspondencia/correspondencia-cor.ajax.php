@@ -25,6 +25,7 @@ class AjaxCorrespondencia {
                 <label>Codigo Consecutivo:</label>
                 <input class="form-control" type="text" value="'.$concecutivo.'" name="nuevoCodigoConcecutivo" readonly>
                 <input type="hidden" value="'.$concecutioConCeros.'" name="nuevoNumeroConcecutivo">
+                <input type="hidden" value="'.$codigoConcecutivo["prefijo_proyecto"].'" name="nuevoPrefijoProyecto">
             </div>';
 
     }
