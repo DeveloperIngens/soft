@@ -2265,6 +2265,48 @@ $("#nuevoDocumentoProyectoCorRecRad").change(function(){
 
 })
 
+/*===========================
+TRAER CODIGO CONCECUTIVO MASIVO
+============================*/
+$("#nuevoProyectoConcecutivoMasivo").change(function(){
+
+    var idProyecto = document.getElementById('nuevoProyectoConcecutivoMasivo').value;
+
+    if(idProyecto != ""){
+
+        $.ajax({
+
+            type: "POST",
+            url: "ajax/correspondencia/correspondencia-cor.ajax.php",
+            data: "idProyecto="+idProyecto,
+            success:function(respuesta){
+
+                $("#contenedorCodigoMasivo").html(respuesta);
+
+            }
+
+        })
+
+    }else{
+
+        swal({
+
+            title: "!Error¡",
+            text: "¡Debe seleccionar el proyecto para poder generar el Codigo concecutivo!",
+            type: "error",
+            confirmButtonText: "¡Cerrar!"
+
+        });
+
+        var respuesta = "";
+
+        $("#contenedorCodigoMasivo").html(respuesta);        
+
+    }
+
+
+});
+
 
 /*===========================
 TRAER CODIGO CONCECUTIVO

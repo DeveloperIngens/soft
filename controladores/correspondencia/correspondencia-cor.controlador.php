@@ -1369,6 +1369,125 @@ class ControladorCorrespondencia {
     }
 
     /*===============================
+    CREAR CODIGO CONCECUTIVO MASIVO
+    ===============================*/
+    static public function ctrCrearCodigoConcecutivoMasivo(){
+
+        if(isset($_POST["crearConcecutivoMasivo"])){
+
+            $tabla = "correspondencia_enviada";
+
+            $cantidadConcecutivos = $_POST["cantidadConcecutivosGenerar"];
+
+            $nuevoNumeroConcecutivo = $_POST["nuevoNumeroConcecutivo"] + $cantidadConcecutivos - 1;
+
+            $concecutioConCeros = substr(str_repeat(0, 4).($nuevoNumeroConcecutivo), - 4);
+
+            /*=====================
+            ACTUALIZAR CONCECUTIVO
+            ======================*/
+            $tablaActualizar = "proyectos_cor";
+            
+            $datosActualizar = array(
+
+                "id_proyecto" => $_POST["nuevoProyectoConcecutivoMasivo"],
+                "numero_concecutivo" => $concecutioConCeros
+
+            );
+
+            $actualizarConce = ModeloParametricasCor::mdlActualizarConcecutivo($tablaActualizar, $datosActualizar);
+
+            if($actualizarConce == "ok"){
+
+
+                for ($i=0; $i < $cantidadConcecutivos; $i++) { 
+
+                    $codigo = substr(str_repeat(0, 4).($_POST["nuevoNumeroConcecutivo"] + $i), - 4);
+                    $codigoConcecutivo = $_POST["nuevoPrefijoProyecto"] . "-" . $codigo;
+
+                    $datos = array(
+
+                        "codigo" => $codigoConcecutivo,
+                        "id_proyecto" => $_POST["nuevoProyectoConcecutivoMasivo"],
+                        "id_usuario" => $_SESSION["id_usuario"],
+                        "estado" => "Creado"
+        
+                    );
+    
+                    $respuesta = ModeloCorrespondencia::mdlCrearCodigoConcecutivo($tabla, $datos);
+    
+                }
+
+                if($respuesta == "ok"){
+
+                    echo "<script>
+
+                        swal({
+
+                            type: 'success',
+                            title: '¡Se creo el Codigo consecutivo correctamente!',
+                            showConfirmButton: true,
+                            confirmButtonText: 'Cerrar'
+
+                        }).then(function(result){
+
+                            window.location = 'correspondencia-enviada-cor';
+
+                        });
+                
+
+                    </script>";
+
+                }
+
+
+            }else{
+
+                echo "<script>
+
+                    swal({
+
+                        type: 'error',
+                        title: '¡Algo salio mal, por favor vuelve a intentarlo!',
+                        showConfirmButton: true,
+                        confirmButtonText: 'Cerrar'
+
+                    }).then(function(result){
+
+                        window.location = 'correspondencia-enviada-cor';
+
+                    });
+
+                </script>";
+
+            }
+
+
+        }else{
+
+            echo "<script>
+
+                swal({
+
+                    type: 'error',
+                    title: '¡Algo salio mal, por favor vuelve a intentarlo!',
+                    showConfirmButton: true,
+                    confirmButtonText: 'Cerrar'
+
+                }).then(function(result){
+
+                    window.location = 'correspondencia-enviada-cor';
+
+                });
+
+            </script>";
+            
+        }
+
+
+    }
+
+    /*===============================
     CREAR CODIGO CONCECUTIVO
     ===============================*/
     static public function ctrCrearCodigoConcecutivo(){
