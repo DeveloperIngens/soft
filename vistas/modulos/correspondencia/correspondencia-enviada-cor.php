@@ -451,7 +451,7 @@ MODAL GENERAR CODIGO CONCECUTIVO MASIVO
 
             <div class="form-group">
                 <label>Cantidad Concecutivos:</label>
-                <input type="number" class="form-control" name="cantidadConcecutivosGenerar" max="999" required>
+                <input type="number" class="form-control" name="cantidadConcecutivosGenerar" min="1" max="999" required>
             </div>
 
           </div>
