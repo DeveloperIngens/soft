@@ -41,7 +41,7 @@
       <hr>
 
       <?php 
-      
+
       $perfiles = ControladorPerfilesUsuarios::ctrObtenerPerfilesUsuarios($_SESSION["id_usuario"]);
 
       foreach ($perfiles as $key => $value):

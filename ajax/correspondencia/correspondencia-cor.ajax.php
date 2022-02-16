@@ -17,16 +17,25 @@ class AjaxCorrespondencia {
 
         $codigoConcecutivo = ControladorCorrespondencia::ctrObtenerCodigoConcecutivo($tabla, $idProyecto);
 
-        $concecutioConCeros = substr(str_repeat(0, 4).($codigoConcecutivo["numero_concecutivo"] + 1), - 4);
+        if($codigoConcecutivo["numero_concecutivo"] != ""){
 
-        $concecutivo = $codigoConcecutivo["prefijo_proyecto"]  . "-" . $concecutioConCeros;
+            $concecutioConCeros = substr(str_repeat(0, 4).($codigoConcecutivo["numero_concecutivo"] + 1), - 4);
 
-        echo '<div class="form-group">
-                <label>Codigo Consecutivo:</label>
-                <input class="form-control" type="text" value="'.$concecutivo.'" name="nuevoCodigoConcecutivo" readonly>
-                <input type="hidden" value="'.$concecutioConCeros.'" name="nuevoNumeroConcecutivo">
-                <input type="hidden" value="'.$codigoConcecutivo["prefijo_proyecto"].'" name="nuevoPrefijoProyecto">
-            </div>';
+            $concecutivo = $codigoConcecutivo["prefijo_proyecto"]  . "-" . $concecutioConCeros;
+
+            echo '<div class="form-group">
+                    <input type="hidden" value="'.$codigoConcecutivo["prefijo_proyecto"].'" name="nuevoPrefijoProyecto">
+                </div>';
+
+        }else{
+
+            echo '<div class="alert alert-warning alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-warning"></i> Error!</h4>
+                    El Proyecto no tiene concecutivo, por favor volver a intentarlo!
+                </div>';
+
+        }
 
     }
 
