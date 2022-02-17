@@ -1382,55 +1382,86 @@ class ControladorCorrespondencia {
 
             if($codigoConcecutivo["numero_concecutivo"] != ""){
 
-                $concecutivoConCeros = substr(str_repeat(0, 4).($codigoConcecutivo["numero_concecutivo"] + 1), - 4);
+                $ultimoConcecutivo = ModeloCorrespondencia::mdlObtenerUltimoCodigoCorEnviada($_POST["nuevoProyectoConcecutivoMasivo"]);
 
-                $cantidadConcecutivos = $_POST["cantidadConcecutivosGenerar"];
+                $concecutivoConCerosValidacion = substr(str_repeat(0, 4).($codigoConcecutivo["numero_concecutivo"] + 1), - 4);
 
-                $nuevoNumeroConcecutivo = $concecutivoConCeros + $cantidadConcecutivos - 1;
+                $codigoConcecutivoValidacion = $_POST["nuevoPrefijoProyecto"] . "-" . $concecutivoConCerosValidacion;
 
-                /*=====================
-                ACTUALIZAR CONCECUTIVO
-                ======================*/
-                $tablaActualizar = "proyectos_cor";
+                if($codigoConcecutivoValidacion > $ultimoConcecutivo["codigo"]){
+
+                    $concecutivoConCeros = substr(str_repeat(0, 4).($codigoConcecutivo["numero_concecutivo"] + 1), - 4);
+
+                    $cantidadConcecutivos = $_POST["cantidadConcecutivosGenerar"];
+
+                    $nuevoNumeroConcecutivo = $concecutivoConCeros + $cantidadConcecutivos - 1;
+
+                    /*=====================
+                    ACTUALIZAR CONCECUTIVO
+                    ======================*/
+                    $tablaActualizar = "proyectos_cor";
+                    
+                    $datosActualizar = array(
+
+                        "id_proyecto" => $_POST["nuevoProyectoConcecutivoMasivo"],
+                        "numero_concecutivo" => $nuevoNumeroConcecutivo
+
+                    );
+
+                    $actualizarConce = ModeloParametricasCor::mdlActualizarConcecutivo($tablaActualizar, $datosActualizar);
+
+                    if($actualizarConce == "ok"){
+
+
+                        for ($i=0; $i < $cantidadConcecutivos; $i++) { 
+
+                            $codigo = substr(str_repeat(0, 4).($concecutivoConCeros + $i), - 4);
+                            $codigoConcecutivo = $_POST["nuevoPrefijoProyecto"] . "-" . $codigo;
+
+                            $datos = array(
+
+                                "codigo" => $codigoConcecutivo,
+                                "id_proyecto" => $_POST["nuevoProyectoConcecutivoMasivo"],
+                                "id_usuario" => $_SESSION["id_usuario"],
+                                "estado" => "Creado"
                 
-                $datosActualizar = array(
-
-                    "id_proyecto" => $_POST["nuevoProyectoConcecutivoMasivo"],
-                    "numero_concecutivo" => $nuevoNumeroConcecutivo
-
-                );
-
-                $actualizarConce = ModeloParametricasCor::mdlActualizarConcecutivo($tablaActualizar, $datosActualizar);
-
-                if($actualizarConce == "ok"){
-
-
-                    for ($i=0; $i < $cantidadConcecutivos; $i++) { 
-
-                        $codigo = substr(str_repeat(0, 4).($concecutivoConCeros + $i), - 4);
-                        $codigoConcecutivo = $_POST["nuevoPrefijoProyecto"] . "-" . $codigo;
-
-                        $datos = array(
-
-                            "codigo" => $codigoConcecutivo,
-                            "id_proyecto" => $_POST["nuevoProyectoConcecutivoMasivo"],
-                            "id_usuario" => $_SESSION["id_usuario"],
-                            "estado" => "Creado"
+                            );
             
-                        );
-        
-                        $respuesta = ModeloCorrespondencia::mdlCrearCodigoConcecutivo($tabla, $datos);
-        
-                    }
+                            $respuesta = ModeloCorrespondencia::mdlCrearCodigoConcecutivo($tabla, $datos);
+            
+                        }
 
-                    if($respuesta == "ok"){
+                        if($respuesta == "ok"){
+
+                            echo "<script>
+
+                                swal({
+
+                                    type: 'success',
+                                    title: '¡Se creo el Codigo consecutivo correctamente!',
+                                    showConfirmButton: true,
+                                    confirmButtonText: 'Cerrar'
+
+                                }).then(function(result){
+
+                                    window.location = 'correspondencia-enviada-cor';
+
+                                });
+                        
+
+                            </script>";
+
+                        }
+
+
+                    }else{
 
                         echo "<script>
 
                             swal({
 
-                                type: 'success',
-                                title: '¡Se creo el Codigo consecutivo correctamente!',
+                                type: 'error',
+                                title: '¡Algo salio mal, por favor vuelve a intentarlo!',
                                 showConfirmButton: true,
                                 confirmButtonText: 'Cerrar'
 
@@ -1439,12 +1470,10 @@ class ControladorCorrespondencia {
                                 window.location = 'correspondencia-enviada-cor';
 
                             });
-                    
 
                         </script>";
 
                     }
-
 
                 }else{
 
@@ -1453,7 +1482,7 @@ class ControladorCorrespondencia {
                         swal({
 
                             type: 'error',
-                            title: '¡Algo salio mal, por favor vuelve a intentarlo!',
+                            title: '¡Algo salio mal, al generar el codigo concecutivo, por favor vuelve a intentarlo!',
                             showConfirmButton: true,
                             confirmButtonText: 'Cerrar'
 
@@ -1528,45 +1557,76 @@ class ControladorCorrespondencia {
 
             if($codigoConcecutivo["numero_concecutivo"] != ""){
 
-                $concecutioConCeros = substr(str_repeat(0, 4).($codigoConcecutivo["numero_concecutivo"] + 1), - 4);
+                $ultimoConcecutivo = ModeloCorrespondencia::mdlObtenerUltimoCodigoCorEnviada($_POST["nuevoProyectoConcecutivo"]);
 
-                /*=====================
-                ACTUALIZAR CONCECUTIVO
-                ======================*/
-                $tablaActualizar = "proyectos_cor";
-                
-                $datosActualizar = array(
+                $concecutivoConCerosValidacion = substr(str_repeat(0, 4).($codigoConcecutivo["numero_concecutivo"] + 1), - 4);
 
-                    "id_proyecto" => $_POST["nuevoProyectoConcecutivo"],
-                    "numero_concecutivo" => $concecutioConCeros
+                $codigoConcecutivoValidacion = $_POST["nuevoPrefijoProyecto"] . "-" . $concecutivoConCerosValidacion;
 
-                );
+                if($codigoConcecutivoValidacion > $ultimoConcecutivo["codigo"]){
 
-                $actualizarConce = ModeloParametricasCor::mdlActualizarConcecutivo($tablaActualizar, $datosActualizar);
+                    $concecutioConCeros = substr(str_repeat(0, 4).($codigoConcecutivo["numero_concecutivo"] + 1), - 4);
 
-                if($actualizarConce == "ok"){
+                    /*=====================
+                    ACTUALIZAR CONCECUTIVO
+                    ======================*/
+                    $tablaActualizar = "proyectos_cor";
+                    
+                    $datosActualizar = array(
 
-                    $concecutivo = $codigoConcecutivo["prefijo_proyecto"]  . "-" . $concecutioConCeros;
-
-                    $datos = array(
-
-                        "codigo" => $concecutivo,
                         "id_proyecto" => $_POST["nuevoProyectoConcecutivo"],
-                        "id_usuario" => $_SESSION["id_usuario"],
-                        "estado" => "Creado"
-        
+                        "numero_concecutivo" => $concecutioConCeros
+
                     );
 
-                    $respuesta = ModeloCorrespondencia::mdlCrearCodigoConcecutivo($tabla, $datos);
+                    $actualizarConce = ModeloParametricasCor::mdlActualizarConcecutivo($tablaActualizar, $datosActualizar);
 
-                    if($respuesta == "ok"){
+                    if($actualizarConce == "ok"){
+
+                        $concecutivo = $codigoConcecutivo["prefijo_proyecto"]  . "-" . $concecutioConCeros;
+
+                        $datos = array(
+
+                            "codigo" => $concecutivo,
+                            "id_proyecto" => $_POST["nuevoProyectoConcecutivo"],
+                            "id_usuario" => $_SESSION["id_usuario"],
+                            "estado" => "Creado"
+            
+                        );
+
+                        $respuesta = ModeloCorrespondencia::mdlCrearCodigoConcecutivo($tabla, $datos);
+
+                        if($respuesta == "ok"){
+
+                            echo "<script>
+
+                                swal({
+
+                                    type: 'success',
+                                    title: '¡Se creo el Codigo consecutivo: <br><b>".$concecutivo."</b> <br>correctamente!',
+                                    showConfirmButton: true,
+                                    confirmButtonText: 'Cerrar'
+
+                                }).then(function(result){
+
+                                    window.location = 'correspondencia-enviada-cor';
+
+                                });
+                        
+
+                            </script>";
+
+                        }
+
+
+                    }else{
 
                         echo "<script>
 
                             swal({
 
-                                type: 'success',
-                                title: '¡Se creo el Codigo consecutivo: <br><b>".$concecutivo."</b> <br>correctamente!',
+                                type: 'error',
+                                title: '¡Algo salio mal, por favor vuelve a intentarlo!',
                                 showConfirmButton: true,
                                 confirmButtonText: 'Cerrar'
 
@@ -1575,12 +1635,10 @@ class ControladorCorrespondencia {
                                 window.location = 'correspondencia-enviada-cor';
 
                             });
-                    
 
                         </script>";
 
                     }
-
 
                 }else{
 
@@ -1589,7 +1647,7 @@ class ControladorCorrespondencia {
                         swal({
 
                             type: 'error',
-                            title: '¡Algo salio mal, por favor vuelve a intentarlo!',
+                            title: '¡Algo salio mal, al generar el codigo concecutivo, por favor vuelve a intentarlo!',
                             showConfirmButton: true,
                             confirmButtonText: 'Cerrar'
 
@@ -1602,6 +1660,25 @@ class ControladorCorrespondencia {
                     </script>";
 
                 }
+
+            }else{
+
+                echo "<script>
+
+                    swal({
+
+                        type: 'error',
+                        title: '¡Algo salio mal, al generar el codigo concecutivo, por favor vuelve a intentarlo!',
+                        showConfirmButton: true,
+                        confirmButtonText: 'Cerrar'
+
+                    }).then(function(result){
+
+                        window.location = 'correspondencia-enviada-cor';
+
+                    });
+
+                </script>";
 
             }
 

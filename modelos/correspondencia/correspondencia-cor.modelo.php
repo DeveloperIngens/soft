@@ -7,6 +7,22 @@ require_once $ruta;
 class ModeloCorrespondencia {
 
 	/*============================
+    OBTENER CODIGO ULTIMA CORRESPONDENCIA PROYECTO
+    =============================*/
+	static public function mdlObtenerUltimoCodigoCorEnviada($idProyecto){
+
+		$stmt = Conexion::conectar()->prepare("SELECT codigo FROM correspondencia_enviada WHERE id_proyecto = $idProyecto ORDER BY codigo DESC LIMIT 1");
+
+		$stmt->execute();
+
+		return $stmt->fetch();
+
+		$stmt = null;
+
+	}
+
+
+	/*============================
     CANTIDAD EN CORRESPONDENCIA ASIGNADA Y RE-ASIGNADA GLOBAL
     =============================*/
 	static public function mdlObtenerCantidadesCorrespondenciaRecibida($tabla){
