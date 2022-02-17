@@ -1384,6 +1384,12 @@ class ControladorCorrespondencia {
 
                 $ultimoConcecutivo = ModeloCorrespondencia::mdlObtenerUltimoCodigoCorEnviada($_POST["nuevoProyectoConcecutivoMasivo"]);
 
+                if(empty($ultimoConcecutivo)){
+
+                    $ultimoConcecutivo["codigo"] = "0000";
+
+                }
+
                 $concecutivoConCerosValidacion = substr(str_repeat(0, 4).($codigoConcecutivo["numero_concecutivo"] + 1), - 4);
 
                 $codigoConcecutivoValidacion = $_POST["nuevoPrefijoProyecto"] . "-" . $concecutivoConCerosValidacion;
@@ -1396,6 +1402,8 @@ class ControladorCorrespondencia {
 
                     $nuevoNumeroConcecutivo = $concecutivoConCeros + $cantidadConcecutivos - 1;
 
+                    $concecutivoConCerosActualizar = substr(str_repeat(0, 4).($nuevoNumeroConcecutivo), - 4);
+
                     /*=====================
                     ACTUALIZAR CONCECUTIVO
                     ======================*/
@@ -1404,7 +1412,7 @@ class ControladorCorrespondencia {
                     $datosActualizar = array(
 
                         "id_proyecto" => $_POST["nuevoProyectoConcecutivoMasivo"],
-                        "numero_concecutivo" => $nuevoNumeroConcecutivo
+                        "numero_concecutivo" => $concecutivoConCerosActualizar
 
                     );
 
