@@ -9,8 +9,7 @@ class ControladorCorrectivo{
 
 		if(isset($_POST["nuevoMantenimientos"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoMantenimientos"])&&
-			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoTipo"])){ 
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoTipo"])){ 
 			   
 				$tabla = "par_tipo_mantenimiento";
 				
