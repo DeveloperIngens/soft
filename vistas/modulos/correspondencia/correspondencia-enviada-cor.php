@@ -63,11 +63,7 @@
 
             <?php
 
-            $tabla = "correspondencia_enviada";
-            $item = null;
-            $valor = null;
-
-            $correspondenciaEnviada = ControladorCorrespondencia::ctrMostrarCorrespondenciaRequerida($tabla, $item, $valor);
+            $correspondenciaEnviada = ControladorCorrespondencia::ctrMostrarCorrespondenciaUsuario($_SESSION["id_usuario"]);
 
             foreach($correspondenciaEnviada as $key => $valueCorresEnv): 
 
@@ -82,50 +78,48 @@
                 
             ?>
 
-              <?php if($valueCorresEnv["id_usuario"] == $_SESSION["id_usuario"] || $_SESSION["rol_software"] == "administrador"): ?>
 
-                <tr>
+              <tr>
 
-                  <td><?php echo $valueCorresEnv["id_cor_enviado"]; ?></td>
-                  <td><?php echo $valueCorresEnv["asunto"]; ?></td>
-                  <td><?php echo $proyecto["nombre_proyecto"]; ?></td>
-                  <td><?php echo $valueCorresEnv["codigo"]; ?></td>
-                  <td data-sort="YYYYMMDD"><?php echo $fecha; ?></td>
-                  <td><?php echo $valueCorresEnv["estado"]; ?></td>
-                  <td>
+                <td><?php echo $valueCorresEnv["id_cor_enviado"]; ?></td>
+                <td><?php echo $valueCorresEnv["asunto"]; ?></td>
+                <td><?php echo $proyecto["nombre_proyecto"]; ?></td>
+                <td><?php echo $valueCorresEnv["codigo"]; ?></td>
+                <td data-sort="YYYYMMDD"><?php echo $fecha; ?></td>
+                <td><?php echo $valueCorresEnv["estado"]; ?></td>
+                <td>
 
-                    <button class="btn btn-info btn-xs btnVerDocumentoRadicar" data-toggle="modal" data-target="#modalVerDocumentoRadicar" idCorrespondenciaEnviada="<?php echo $valueCorresEnv["id_cor_enviado"]; ?>" title="Ver Documento Radicar"><i class="fa fa-eye"></i></button>
+                  <button class="btn btn-info btn-xs btnVerDocumentoRadicar" data-toggle="modal" data-target="#modalVerDocumentoRadicar" idCorrespondenciaEnviada="<?php echo $valueCorresEnv["id_cor_enviado"]; ?>" title="Ver Documento Radicar"><i class="fa fa-eye"></i></button>
 
-                    <?php if($valueCorresEnv["estado"] == "Creado" && $valueCorresEnv["id_usuario"] == $_SESSION["id_usuario"] || $valueCorresEnv["estado"] == "Creado" && $_SESSION["rol_software"] == "administrador"): ?>
+                  <?php if($valueCorresEnv["estado"] == "Creado" && $valueCorresEnv["id_usuario"] == $_SESSION["id_usuario"] || $valueCorresEnv["estado"] == "Creado" && $_SESSION["rol_software"] == "administrador"): ?>
 
-                      <button class="btn btn-success btn-xs btnCargarDocumentoRadicar" data-toggle="modal" data-target="#modalCargarDocumentoRadicar" idCorrespondenciaEnviada="<?php echo $valueCorresEnv["id_cor_enviado"]; ?>" title="Cargar Documento Radicar"><i class="fas fa-file-export"></i></button>
+                    <button class="btn btn-success btn-xs btnCargarDocumentoRadicar" data-toggle="modal" data-target="#modalCargarDocumentoRadicar" idCorrespondenciaEnviada="<?php echo $valueCorresEnv["id_cor_enviado"]; ?>" title="Cargar Documento Radicar"><i class="fas fa-file-export"></i></button>
 
-                      <!--<button class="btn btn-default btn-xs"><i class="fas fa-file-export"></i></button>-->
+                    <!--<button class="btn btn-default btn-xs"><i class="fas fa-file-export"></i></button>-->
 
-                    <?php endif ?>
+                  <?php endif ?>
 
-                    <?php if($valueCorresEnv["estado"] == "En radicación" && $valueCorresEnv["id_usuario"] == $_SESSION["id_usuario"] || $valueCorresEnv["estado"] == "En radicación" && $_SESSION["rol_software"] == "administrador"): ?>
+                  <?php if($valueCorresEnv["estado"] == "En radicación" && $valueCorresEnv["id_usuario"] == $_SESSION["id_usuario"] || $valueCorresEnv["estado"] == "En radicación" && $_SESSION["rol_software"] == "administrador"): ?>
 
-                      <button class="btn btn-success btn-xs btnCargarRespuestaRadicado" data-toggle="modal" data-target="#modalCargarRespuestaRadicado" idCorrespondenciaEnviada="<?php echo $valueCorresEnv["id_cor_enviado"]; ?>" title="Respuesta Radicado"><i class="fas fa-reply"></i></button>
+                    <button class="btn btn-success btn-xs btnCargarRespuestaRadicado" data-toggle="modal" data-target="#modalCargarRespuestaRadicado" idCorrespondenciaEnviada="<?php echo $valueCorresEnv["id_cor_enviado"]; ?>" title="Respuesta Radicado"><i class="fas fa-reply"></i></button>
 
-                      <!--<button class="btn btn-default btn-xs"><i class="fas fa-reply"></i></button>-->
+                    <!--<button class="btn btn-default btn-xs"><i class="fas fa-reply"></i></button>-->
 
-                    <?php endif ?>
+                  <?php endif ?>
 
-                    <?php if($valueCorresEnv["estado"] == "Creado" || $valueCorresEnv["estado"] == "En radicación" && $valueCorresEnv["id_usuario"] == $_SESSION["id_usuario"] || $valueCorresEnv["estado"] == "Creado" || $valueCorresEnv["estado"] == "En radicación" && $_SESSION["rol_software"] == "administrador"): ?>
+                  <?php if($valueCorresEnv["estado"] == "Creado" || $valueCorresEnv["estado"] == "En radicación" && $valueCorresEnv["id_usuario"] == $_SESSION["id_usuario"] || $valueCorresEnv["estado"] == "Creado" || $valueCorresEnv["estado"] == "En radicación" && $_SESSION["rol_software"] == "administrador"): ?>
 
-                      <button class="btn btn-danger btn-xs btnAnularDocumentoRadicar" data-toggle="modal" data-target="#modalAnularDocumentoRadicacion" idCorrespondenciaEnviada="<?php echo $valueCorresEnv["id_cor_enviado"]; ?>" title="Anular Documento Radicar"><i class="fas fa-ban"></i></button>
+                    <button class="btn btn-danger btn-xs btnAnularDocumentoRadicar" data-toggle="modal" data-target="#modalAnularDocumentoRadicacion" idCorrespondenciaEnviada="<?php echo $valueCorresEnv["id_cor_enviado"]; ?>" title="Anular Documento Radicar"><i class="fas fa-ban"></i></button>
 
-                      <!--<button class="btn btn-default btn-xs"><i class="fas fa-ban"></i></button>-->
+                    <!--<button class="btn btn-default btn-xs"><i class="fas fa-ban"></i></button>-->
 
-                    <?php endif ?>
+                  <?php endif ?>
 
 
-                  </td>
+                </td>
 
-                </tr>
+              </tr>
               
-              <?php endif ?>
 
             <?php endforeach ?>
 

@@ -508,4 +508,19 @@ class ModeloCorrespondencia {
 
     }
 
+	/*==========================
+    OBTENER CORRESPONDENCIA USUARIO
+    ===========================*/
+	static public function mdlMostrarCorrespondenciaUsuario($idUsuario){
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM correspondencia_enviada Where id_usuario = $idUsuario");
+		
+		$stmt->execute();
+
+		return $stmt->fetchAll();
+
+		$stmt = null;
+
+	}
+
 }
