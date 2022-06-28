@@ -78,7 +78,6 @@
                 
             ?>
 
-
               <tr>
 
                 <td><?php echo $valueCorresEnv["id_cor_enviado"]; ?></td>
