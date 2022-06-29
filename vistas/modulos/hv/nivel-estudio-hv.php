@@ -89,7 +89,7 @@
 
         <hr>
 
-        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+        <table class="table table-bordered table-striped dt-responsive tablasNivelEstudio" width="100%">
           
           <thead>
             
@@ -454,7 +454,7 @@ MODAL AGREGAR TECNICO LABORAL
             <div class="form-group">
                 <label>Departamento Institución Educativa:</label>
                 <div class="input-group">
-                    <select class="form-control nuevoDepartamentoInstitucionTecLaboral" name="nuevoDepartamentoInstitucionTecLaboral" required>
+                    <select class="form-control nuevoDepartamentoInstitucionTecLaboral select2" style="width: 100%;" name="nuevoDepartamentoInstitucionTecLaboral" required>
                         <option value="">-- Seleccione una opcion --</option>
 
                         <?php
@@ -587,7 +587,7 @@ MODAL AGREGAR TEC PROFESIONAL
             <div class="form-group">
                 <label>Departamento Institución Educativa:</label>
                 <div class="input-group">
-                    <select class="form-control nuevoDepartamentoInstitucionTecPro" name="nuevoDepartamentoInstitucionTecPro" required>
+                    <select class="form-control nuevoDepartamentoInstitucionTecPro select2" style="width: 100%;" name="nuevoDepartamentoInstitucionTecPro" required>
                         <option value="">-- Seleccione una opcion --</option>
 
                         <?php
@@ -720,7 +720,7 @@ MODAL AGREGAR TECNOLOGICA
             <div class="form-group">
                 <label>Departamento Institución Educativa:</label>
                 <div class="input-group">
-                    <select class="form-control nuevoDepartamentoInstitucionTecnologica" name="nuevoDepartamentoInstitucionTecnologica" required>
+                    <select class="form-control nuevoDepartamentoInstitucionTecnologica select2" style="width: 100%;" name="nuevoDepartamentoInstitucionTecnologica" required>
                         <option value="">-- Seleccione una opcion --</option>
 
                         <?php
@@ -854,7 +854,7 @@ MODAL AGREGAR UNIVERSITARIA
             <div class="form-group">
                 <label>Departamento Institución Educativa:</label>
                 <div class="input-group">
-                    <select class="form-control nuevoDepartamentoInstitucionUni" name="nuevoDepartamentoInstitucionUni" required>
+                    <select class="form-control nuevoDepartamentoInstitucionUni select2" style="width: 100%;" name="nuevoDepartamentoInstitucionUni" required>
                         <option value="">-- Seleccione una opcion --</option>
 
                         <?php
@@ -1005,7 +1005,7 @@ MODAL AGREGAR ESPECIALIZACION
             <div class="form-group">
                 <label>Departamento Institución Educativa:</label>
                 <div class="input-group">
-                    <select class="form-control nuevoDepartamentoInstitucionEsp" name="nuevoDepartamentoInstitucionEsp" required>
+                    <select class="form-control nuevoDepartamentoInstitucionEsp select2" style="width: 100%;" name="nuevoDepartamentoInstitucionEsp" required>
                         <option value="">-- Seleccione una opcion --</option>
 
                         <?php
@@ -1141,7 +1141,7 @@ MODAL AGREGAR MAESTRIA
             <div class="form-group">
                 <label>Departamento Institución Educativa:</label>
                 <div class="input-group">
-                    <select class="form-control nuevoDepartamentoInstitucionMae" name="nuevoDepartamentoInstitucionMae" required>
+                    <select class="form-control nuevoDepartamentoInstitucionMae select2" style="width: 100%;" name="nuevoDepartamentoInstitucionMae" required>
                         <option value="">-- Seleccione una opcion --</option>
 
                         <?php
@@ -1275,7 +1275,7 @@ MODAL AGREGAR DOCTORADO
             <div class="form-group">
                 <label>Departamento Institución Educativa:</label>
                 <div class="input-group">
-                    <select class="form-control nuevoDepartamentoInstitucionDoc" name="nuevoDepartamentoInstitucionDoc" required>
+                    <select class="form-control nuevoDepartamentoInstitucionDoc select2" style="width: 100%;" name="nuevoDepartamentoInstitucionDoc" required>
                         <option value="">-- Seleccione una opcion --</option>
 
                         <?php

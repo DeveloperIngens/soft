@@ -119,12 +119,7 @@
 
           <div class="col-lg-6">
             <label>Fecha Nacimiento:</label>
-            <div class="input-group">
-              <input type="date" class="form-control" min="1950-01-01" max="2003-12-31" name="nuevoFechaNacimiento" required>
-              <span class="input-group-addon">
-                <i class="fas fa-star"></i>
-              </span>
-            </div>
+            <input type="date" class="form-control" min="1950-01-01" name="nuevoFechaNacimiento">
           </div>
         </div>
         <br>
@@ -132,7 +127,7 @@
           <div class="col-lg-12">
             <label>Nacionalidad:</label>
             <div class="input-group">
-              <select class="form-control" id="nuevaNacionalidad" name="nuevaNacionalidad" required>
+              <select class="form-control select2" id="nuevaNacionalidad" name="nuevaNacionalidad" required>
                 <option value="">-- Seleccione una opcion --</option>
                 <?php 
                 
@@ -211,12 +206,7 @@
           </div><!-- /.col-lg-6 -->
           <div class="col-lg-4">
             <label>Número Celular 2:</label>
-            <div class="input-group">
-            <input type="text" class="form-control" name="nuevoCelular2" data-inputmask="'mask':'999 999 9999'" data-mask required>
-              <span class="input-group-addon">
-                <i class="fas fa-star"></i>
-              </span>
-            </div>
+            <input type="text" class="form-control" name="nuevoCelular2" data-inputmask="'mask':'999 999 9999'" data-mask>
           </div>
           <div class="col-lg-4">
             <label>Teléfono:</label>

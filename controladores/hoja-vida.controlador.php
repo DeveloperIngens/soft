@@ -121,8 +121,7 @@ class ControladorHojaVida {
                 preg_match('/^[(\\)\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaProfesion"]) &&
                 preg_match('/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/', $_POST["nuevoCorreoElectronico"]) &&
                 preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["nuevaDireccionResidencia"]) &&
-                preg_match('/^[0-9 ]+$/', $_POST["nuevoCelular"]) &&
-                preg_match('/^[0-9 ]+$/', $_POST["nuevoCelular2"])){
+                preg_match('/^[0-9 ]+$/', $_POST["nuevoCelular"])){
                 
                 foreach ($_FILES["nuevoArchivoDocumentoIdentidad"]["type"] as $key => $tipo) {
 
@@ -710,8 +709,7 @@ class ControladorHojaVida {
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevosApellidos"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaProfesion"]) &&
                 preg_match('/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/', $_POST["nuevoCorreoElectronico"]) &&
-                preg_match('/^[0-9 ]+$/', $_POST["nuevoCelular"]) &&
-                preg_match('/^[0-9 ]+$/', $_POST["nuevoCelular2"])){
+                preg_match('/^[0-9 ]+$/', $_POST["nuevoCelular"])){
                 
                 foreach ($_FILES["nuevoArchivoDocumentoIdentidad"]["type"] as $key => $tipo) {
 
