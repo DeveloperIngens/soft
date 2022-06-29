@@ -60,6 +60,12 @@
         
       </div>
 
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" required class="micheckbox"> Acepta <a href="extensiones/habeas-data.pdf" target="_blank">Terminos y Condiciones</a>
+        </label>
+      </div>
+
       <div class="form-group">
           <br>
           <button type="submit" name="crearUsuario" class="btn btn-success btn-block">Registrarse</button>
