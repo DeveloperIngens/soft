@@ -1737,4 +1737,15 @@ class ControladorCorrespondencia {
 
     }
 
+    /*==========================
+    OBTENER CORRESPONDENCIA USUARIO
+    ===========================*/
+    static public function ctrMostrarCorrespondenciaUsuario($idUsuario){
+
+        $respuesta = ModeloCorrespondencia::mdlMostrarCorrespondenciaUsuario($idUsuario);
+
+        return $respuesta;
+
+    }
+
 }

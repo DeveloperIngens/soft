@@ -172,6 +172,7 @@
                     <th>#</th>
                     <th>Nombres</th>
                     <th>Apellidos</th>
+                    <th>Numero Documento</th>
                     <th>Correos</th>
                     <th>Empresa o Entidad</th>
                     <th>Profesión</th>
@@ -190,6 +191,7 @@
                         <td><?php echo $valueResultados["id_datos_personales"]; ?></td>
                         <td><?php echo $valueResultados["nombres"]; ?></td>
                         <td><?php echo $valueResultados["apellidos"]; ?></td>
+                        <td><?php echo $valueResultados["identificacion"]; ?></td>
                         <td><?php echo $valueResultados["correo_electronico"]; ?></td>
                         <td><?php echo $valueResultados["empresa_entidad"]; ?></td>
                         <td><?php echo $valueResultados["profesion"]; ?></td>

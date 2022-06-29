@@ -430,7 +430,7 @@ class ModeloHojaVida {
 
         if($item != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY fecha_finalizacion DESC");
 
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
@@ -447,8 +447,6 @@ class ModeloHojaVida {
 			return $stmt -> fetchAll();
 
 		}
-
-		$stmt -> close();
 
 		$stmt = null;
 

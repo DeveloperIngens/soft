@@ -223,21 +223,11 @@ TIENE DATOS PERSONALES EXISTENTES
         </div><!-- /.col-lg-6 -->
         <div class="col-lg-4">
         <label>Número Celular 2:</label>
-        <div class="input-group">
         <input type="text" class="form-control" name="verCelular2" data-inputmask="'mask':'999 999 9999'" data-mask required readonly value="<?php echo $valueHojaVida["numero_celular_2"]; ?>">
-            <span class="input-group-addon">
-            <i class="fas fa-star"></i>
-            </span>
-        </div>
         </div>
         <div class="col-lg-4">
         <label>Teléfono:</label>
-        <div class="input-group">
             <input type="text" class="form-control" name="nuevoTelefono" data-inputmask="'mask':'999 9999'" data-mask required readonly value="<?php echo $valueHojaVida["numero_telefono"]; ?>">
-            <span class="input-group-addon">
-            <i class="fas fa-star"></i>
-            </span>
-        </div>
         </div>
     </div>
 
