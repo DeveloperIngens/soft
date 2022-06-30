@@ -77,8 +77,8 @@
             </div>
             <div class="col-lg-3">
               <div class="form-group">
-                  <label>Palabras Clave:</label>
-                  <input type="text" name="buscarPalabra" class="form-control">
+                  <label>Profesion:</label>
+                  <input type="text" name="buscarProfesion" class="form-control">
               </div>
             </div>
           </div>
@@ -93,9 +93,9 @@
                 $correo = $_POST["buscarCorreo"];
                 $nivelEducacion = $_POST["buscarNivelEducacion"];
                 $numeroIdentificacion = $_POST["buscarNumeroIdentificacion"];
-                $palabraClave = $_POST["buscarPalabra"];
+                $profesion = $_POST["buscarProfesion"];
 
-                $resultados = ControladorHojaVida::ctrValidarExisteHojaVida($correo, $nivelEducacion, $numeroIdentificacion, $palabraClave);
+                $resultados = ControladorHojaVida::ctrValidarExisteHojaVida($correo, $nivelEducacion, $numeroIdentificacion, $profesion);
 
               }
           
@@ -146,9 +146,9 @@
 
             <?php endif ?>
 
-            <?php if(isset($_POST["buscarPalabra"]) && $_POST["buscarPalabra"] != ""): ?>
+            <?php if(isset($_POST["buscarProfesion"]) && $_POST["buscarProfesion"] != ""): ?>
 
-              <button class="btn btn-success btn-xs">Palabra Clave: <b><?php echo $_POST["buscarPalabra"]; ?></b></button>
+              <button class="btn btn-success btn-xs">Profesion: <b><?php echo $_POST["buscarProfesion"]; ?></b></button>
 
             <?php endif ?>
 

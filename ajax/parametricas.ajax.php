@@ -121,7 +121,7 @@ class AjaxParametricas{
 
         $cadena = '';
 
-        if($valor == "Otro"){
+        if($valor == "OTRO"){
 
             $cadena .= '
                 <label>Institución Educativa:</label>

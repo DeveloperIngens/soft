@@ -100,7 +100,7 @@ class ModeloHojaVida {
     /*===============================
     VALIDAR SI TIENE HOJA DE VIDA
     =================================*/
-    static public function mdlValidarExisteHojaVida($tabla, $correo, $nivelEducacion, $numeroIdentificacion, $palabraClave){
+    static public function mdlValidarExisteHojaVida($tabla, $correo, $nivelEducacion, $numeroIdentificacion, $profesion){
 
         if($correo != ""){
 
@@ -132,13 +132,13 @@ class ModeloHojaVida {
 
         }
 
-        if($palabraClave != ""){
+        if($profesion != ""){
 
-            $textoPalabraClave = "AND nombres LIKE '%$palabraClave%' OR apellidos LIKE '%$palabraClave%' OR profesion LIKE '%$palabraClave%' OR cargo LIKE '%$palabraClave%' OR empresa_entidad LIKE '%$palabraClave%'";
+            $textoProfesion = "AND datos_personales.profesion LIKE '%$profesion%'";
 
         }else{
 
-            $textoPalabraClave = "";
+            $textoProfesion = "";
 
         }
 
@@ -157,7 +157,7 @@ class ModeloHojaVida {
         RIGHT JOIN datos_personales ON nivel_estudio.identificacion_fk = datos_personales.identificacion
         LEFT JOIN experiencia_laboral ON datos_personales.identificacion = experiencia_laboral.identificacion_fk
         WHERE
-        datos_personales.identificacion != '' $textCorreo $textNivelEducacion $textNumeroIdentificacion $textoPalabraClave
+        datos_personales.identificacion != '' $textCorreo $textNivelEducacion $textNumeroIdentificacion $textoProfesion
         GROUP BY identificacion");
         
         if($stmt->execute()){
