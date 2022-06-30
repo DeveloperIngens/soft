@@ -46,11 +46,11 @@ class ControladorHojaVida {
     /*===============================
     VALIDAR SI TIENE HOJA DE VIDA
     =================================*/
-    static public function ctrValidarExisteHojaVida($correo, $nivelEducacion, $numeroIdentificacion, $palabraClave){
+    static public function ctrValidarExisteHojaVida($correo, $nivelEducacion, $numeroIdentificacion, $profesion){
 
         $tabla = "datos_personales";
 
-        $respuesta = ModeloHojaVida::mdlValidarExisteHojaVida($tabla, $correo, $nivelEducacion, $numeroIdentificacion, $palabraClave);
+        $respuesta = ModeloHojaVida::mdlValidarExisteHojaVida($tabla, $correo, $nivelEducacion, $numeroIdentificacion, $profesion);
 
         return $respuesta;
 
